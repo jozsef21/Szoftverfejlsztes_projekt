@@ -38,7 +38,25 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
+            <!-- JPA/Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.4.4.Final</version>
+        </dependency>
+
+            <!-- Database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+        </dependency>
+
     </dependencies>
+
 
     <build>
         <plugins>
