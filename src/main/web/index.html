@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Absolut Cinema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fo">
+        <header class="header">
+            <img src="../pictures/logo.png" alt="Logo" class="logo" id="logoImageView">
+            <h1 class="title">ABSOLUT CINEMA</h1>
+        </header>
+        <nav class="menusor">
+            <button onclick="handleTermeink()">termeink</button>
+            <button onclick="handleBufe()">bufe menu</button>
+            <button onclick="handleNyitva()">nyitva tartas</button>
+            <button onclick="handleLogin()">login</button>
+        </nav>
+
+        <div class="tartalom">
+            <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
+
+            <div class="filmek">
+                <div class="filmkep"><span>Film</span></div>
+                <div class="filminfo">
+                    <h2>Ponyvaregény</h2>
+                    <p class="mufaj">Krimi / Dráma</p>
+                    <div class="vetido">
+                        <button>10:00</button>
+                        <button>13:00</button>
+                        <button>17:00</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filmek">
+                <div class="filmkep"><span>Film</span></div>
+                <div class="filminfo">
+                    <h2>Mátrix</h2>
+                    <p class="mufaj">Sci-fi</p>
+                    <div class="vetido">
+                        <button>10:00</button>
+                        <button>13:00</button>
+                        <button>17:00</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        function handleTermeink() { alert("Termek listaja."); }
+        function handleBufe() { alert("Bufe lista."); }
+        function handleNyitva() { alert("Vasárnaptól Csütörtökig: 10:00 - 20:00 \nPénteken és Szombaton 10:00-22:00"); }
+        function handleLogin() { alert("Belépési felulet."); }
+    </script>
+
+</body>
+</html>
