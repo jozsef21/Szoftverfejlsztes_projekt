@@ -20,7 +20,7 @@ public class JavaFXApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(JavaFXApplication.class.getResource("/szoftver_fejlesztes_mozi/szoftver_fejlesztes_mozi/Manager_felulet.fxml"));
+        FXMLLoader loader = new FXMLLoader(JavaFXApplication.class.getResource("/szoftver_fejlesztes_mozi/szoftver_fejlesztes_mozi/sablon.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 800, 600);
