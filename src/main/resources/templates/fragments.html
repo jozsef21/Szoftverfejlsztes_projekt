@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- Ez a fájl arra szolgál, hogy a minden weblapon megjelenő header részt egységesítse -->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <!-- a head element minden oldalnál ugyan az-->
+    <head th:fragment="common-head(pageTitle)">
+        <meta charset="UTF-8">
+        <title>Absolute Cinema</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/css/style.css}" href="/css/style.css" />
+    </head>
+    <!-- Header rész, ami minden oldalnál megegyezik -->
+    <div th:fragment="common-header">
+        <header class="header">
+            <img th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
+            <h1 class="title">ABSOLUTE CINEMA</h1>
+        </header>
+        <nav class="menusor">
+            <button onclick="handleTermeink()">termeink</button>
+            <button onclick="handleBufe()">bufe menu</button>
+            <button onclick="handleNyitva()">nyitva tartas</button>
+            <button onclick="handleLogin()">login</button>
+        </nav>
+
+        <!-- Közös funkcionalitás -->
+        <script>
+            function handleTermeink() {
+                alert("Termek listaja.");
+            }
+            function handleBufe() {
+                alert("Bufe lista.");
+            }
+            function handleNyitva() {
+                alert("Vasárnaptól Csütörtökig: 10:00 - 20:00 \nPénteken és Szombaton 10:00-22:00");
+            }
+            function handleLogin() {
+                alert("Belépési felulet.");
+            }
+        </script>
+    </div>
+
+</body>
+</html>
