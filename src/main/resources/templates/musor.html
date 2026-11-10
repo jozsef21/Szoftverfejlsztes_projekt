@@ -8,16 +8,9 @@
 </head>
 <body>
     <div class="fo">
-        <header class="header">
-            <img th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
-            <h1 class="title">ABSOLUTE CINEMA</h1>
-        </header>
-        <nav class="menusor">
-            <button onclick="handleTermeink()">termeink</button>
-            <button onclick="handleBufe()">bufe menu</button>
-            <button onclick="handleNyitva()">nyitva tartas</button>
-            <button onclick="handleLogin()">login</button>
-        </nav>
+
+        <!-- header file tartalmának injektálása -->
+        <div th:replace="~{/header :: common-header}"></div>
 
         <div class="tartalom">
             <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
@@ -51,12 +44,6 @@
         </div>
 
     </div>
-    <script>
-        function handleTermeink() { alert("Termek listaja."); }
-        function handleBufe() { alert("Bufe lista."); }
-        function handleNyitva() { alert("Vasárnaptól Csütörtökig: 10:00 - 20:00 \nPénteken és Szombaton 10:00-22:00"); }
-        function handleLogin() { alert("Belépési felulet."); }
-    </script>
 
 </body>
 </html>
