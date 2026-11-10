@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<!-- a head rész injektálása -->
+<head th:replace="~{fragments :: common-head('Absolute Cinema')}"></head>
+
+<body>
+<div class="fo">
+
+    <!-- header file tartalmának injektálása -->
+    <div th:replace="~{/fragments :: common-header}"></div>
+
+    <div class="tartalom">
+        <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
+
+        <div class="filmek">
+            <h1>terem1</h1>
+        </div>
+        <div class="filmek">
+            <h1>terem2</h1>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

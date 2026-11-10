@@ -15,4 +15,9 @@ public class WebViewController {
     public String musorOldal() {
         return "musor";
     }
+
+    @GetMapping("/termek")
+    public String termekOldal() {
+        return "termek";
+    }
 }
