@@ -15,6 +15,7 @@
             <h1 class="title">ABSOLUTE CINEMA</h1>
         </header>
         <nav class="menusor">
+            <button onclick="handleMusor()">Moziműsor</button>
             <button onclick="handleTermeink()">termeink</button>
             <button onclick="handleBufe()">bufe menu</button>
             <button onclick="handleNyitva()">nyitva tartas</button>
@@ -23,6 +24,9 @@
 
         <!-- Közös funkcionalitás -->
         <script>
+            function handleMusor() {
+                window.location.href = "musor";
+            }
             function handleTermeink() {
                 window.location.href = "termek";
             }
