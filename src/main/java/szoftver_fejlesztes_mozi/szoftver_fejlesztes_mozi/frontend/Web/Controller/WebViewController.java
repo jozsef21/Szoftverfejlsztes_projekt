@@ -20,4 +20,9 @@ public class WebViewController {
     public String termekOldal() {
         return "termek";
     }
+
+    @GetMapping("/bufe")
+    public String bufeOldal() {
+        return "bufe";
+    }
 }
