@@ -73,15 +73,18 @@ body {
     font-size: 14px;
 }
 
-.filmblokk, .teremblokk {
-    width: 800px;
-    max-width: 100%;
+.filmblokk, .teremblokk, .menublokk, .kis_menublokk {
     background-color: #c4c4c4;
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 8px;
     box-sizing: border-box;
     display: flex;
+}
+
+.filmblokk, .teremblokk, .menublokk {
+    width: 800px;
+    max-width: 100%;
     gap: 15px;
 }
 
@@ -93,13 +96,36 @@ body {
     height: 300px;
 }
 
-.filmkep, .teremkep {
-    width: 120px;
-    border: 1px solid black;
+.menublokk {
+    min-height: 250px;
+}
+
+.kis_menublokk {
+    width: 200px;
+    height: 200px;
+    flex: 1;
+    align-items: center;
+    gap: 8px;
+    flex-direction: column;
+}
+
+.kis_blokk_container {
+    width: 800px;
+    max-width: 100%;
+    display: flex;
+    gap: 15px;
+}
+
+.filmkep, .teremkep, .kis_menukep {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
+}
+
+.filmkep, .teremkep {
+    width: 120px;
+    border: 1px solid black;
 }
 
 .filmkep {
@@ -109,6 +135,11 @@ body {
 .teremkep {
     width: 150px;
     flex-shrink: 0;
+}
+
+.kis_menukep {
+    border: 1px solid black; /*csak azert van itt, hogy latszodjon*/
+    flex: 1;
 }
 
 .info {
@@ -141,6 +172,7 @@ body {
     cursor: pointer;
 }
 
-.teremleiras {
-
+h3 {
+    text-align: center;
+    font-weight: bold;
 }
