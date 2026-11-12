@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<!-- a head rész injektálása -->
+<head th:replace="~{/fragments :: common-head('Absolute Cinema')}"></head>
+
+<body>
+    <div class="tartalom">
+        <!-- 50-50 Split Container -->
+        <div class="felezo-container">
+            <div class="bal-oldal">
+                <div class="nav-box" onclick="location.href='/termek'">Termek</div>
+                <div class="nav-box" onclick="location.href='/musor'">Filmek</div>
+                <div class="nav-box" onclick="location.href='/bufe'">Büfé Menu</div>
+            </div>
+
+            <div class="jobb-oldal">
+                <h2>Üdvözöljük az Absolute Cinema-ban!</h2>
+                <p>Itt találhatja a legfrissebb információkat a termeinkről, vetítésekről és aktuális akcióinkról. Válasszon a bal oldali dobozok közül a folytatáshoz.</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

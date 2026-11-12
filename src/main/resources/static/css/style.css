@@ -3,15 +3,14 @@ body {
     margin: 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: flex-start;
     font-family: system-ui, -apple-system, sans-serif;
+    justify-content: center;
 }
 .fo {
     width: 1920px;
     max-width: 100%;
     min-height: 1080px;
-    background-color: #303030;
     display: flex;
     flex-direction: column;
 }
@@ -175,4 +174,52 @@ body {
 h3 {
     text-align: center;
     font-weight: bold;
+}
+
+/* Container holding both columns side-by-side */
+.felezo-container {
+    display: flex;
+    width: 1200px;
+    max-width: 100%;
+    gap: 20px;           /* Space between left and right sides */
+    box-sizing: border-box;
+}
+
+/* Both sides take up exactly 50% width each */
+.bal-oldal, .jobb-oldal {
+    flex: 1;             /* Ensures 50-50 equal sharing */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;           /* Space between the big boxes on the left */
+}
+
+/* Bigger navigation boxes on the left */
+.nav-box {
+    background-color: #c4c4c4;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 30px;       /* Makes the boxes taller and bigger */
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 24px;     /* Larger font for navigation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90px;    /* Guaranteed minimum height */
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Right Side Text Box Styling */
+.jobb-oldal {
+    background-color: #c4c4c4;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.jobb-oldal h2 {
+    margin-top: 0;
+    font-size: 28px;
 }

@@ -8,7 +8,7 @@ public class WebViewController {
 
     @GetMapping("/")
     public String kezdoOldal() {
-        return "sablon";
+        return "startlap";
     }
 
     @GetMapping("/musor")
