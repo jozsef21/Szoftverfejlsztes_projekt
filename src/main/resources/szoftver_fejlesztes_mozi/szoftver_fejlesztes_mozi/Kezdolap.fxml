@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" prefWidth="400.0" prefHeight="350.0"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Alkalmazas.Controller.KezdolapController">
+   <padding>
+      <Insets bottom="30.0" left="40.0" right="40.0" top="30.0" />
+   </padding>
+   <children>
+      <Label text="Kezdőlap">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Button fx:id="dolgozokGomb" mnemonicParsing="false" onAction="#dolgozok" prefWidth="180.0" text="Dolgozók" />
+      <Button mnemonicParsing="false" onAction="#vetitesek" prefWidth="180.0" text="Vetítések" />
+      <Button mnemonicParsing="false" onAction="#kijelentkezes" prefWidth="180.0" text="Kijelentkezés" />
+   </children>
+</VBox>
