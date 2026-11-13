@@ -20,10 +20,11 @@ public class JavaFXApplication extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(JavaFXApplication.class.getResource("/szoftver_fejlesztes_mozi/szoftver_fejlesztes_mozi/sablon.fxml"));
+        FXMLLoader loader = new FXMLLoader(JavaFXApplication.class.getResource("/szoftver_fejlesztes_mozi/szoftver_fejlesztes_mozi/Bejelentkezes.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 800, 600);
+        scene.getStylesheets().add(getClass().getResource("/static/css/manager.css").toExternalForm());
         stage.setTitle("Mozi Menedzser Rendszer");
         stage.setScene(scene);
         stage.show();
