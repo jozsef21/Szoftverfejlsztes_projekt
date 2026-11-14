@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
+    position: relative;
     font-family: system-ui, -apple-system, sans-serif;
 }
 
@@ -322,8 +323,10 @@ form button[type="submit"] {
     width: 200px;
     max-width: 400px;
     font-size: 20px;
-    margin-right: auto;
     min-height: 50px;
     height: 80px;
     align-items: center;
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
