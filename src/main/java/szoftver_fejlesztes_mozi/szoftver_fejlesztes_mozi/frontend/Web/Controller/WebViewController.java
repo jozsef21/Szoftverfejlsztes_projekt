@@ -25,4 +25,9 @@ public class WebViewController {
     public String bufeOldal() {
         return "bufe";
     }
+
+    @GetMapping("/login")
+    public String loginOldal() {
+        return "login";
+    }
 }
