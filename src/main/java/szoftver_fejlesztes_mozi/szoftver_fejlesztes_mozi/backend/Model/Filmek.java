@@ -16,6 +16,12 @@ public class Filmek {
 
     }
 
+    public void setCim(String cim) { this.cim = cim; }
+    public void setRendezo(String rendezo) { this.rendezo = rendezo; }
+    public void setKiadas_ev(Integer kiadas_ev) { this.kiadas_ev = kiadas_ev; }
+    public void setMufaj(String mufaj) { this.mufaj = mufaj; }
+    public void setPlakat(String plakat) { this.plakat = plakat; }
+
     public String getCim() {
         return cim;
     }

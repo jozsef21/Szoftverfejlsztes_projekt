@@ -16,6 +16,11 @@ public class Termek {
 
     }
 
+    public void setID(Integer ID) { this.ID = ID; }
+    public void setNev(String nev) { this.nev = nev; }
+    public void setSorok_szama(Integer sorok_szama) { this.sorok_szama = sorok_szama; }
+    public void setOszlopk_szama(Integer oszlopk_szama) { this.oszlopk_szama = oszlopk_szama; }
+
     public Integer getID() {
         return ID;
     }

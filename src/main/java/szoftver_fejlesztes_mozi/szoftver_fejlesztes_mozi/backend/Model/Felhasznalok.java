@@ -15,6 +15,11 @@ public class Felhasznalok {
 
     }
 
+    public void setNev(String nev) { this.nev = nev; }
+    public void setRegisztralt_nev(String regisztralt_nev) { this.regisztralt_nev = regisztralt_nev; }
+    public String getJelszo() { return jelszo; }
+    public void setJelszo(String jelszo) { this.jelszo = jelszo; }
+
     public String getNev() {
         return nev;
     }

@@ -14,6 +14,9 @@ public class Dolgozok {
 
     }
 
+    public void setId(Integer id) { this.id = id; }
+    public void setNev(String nev) { this.nev = nev; }
+
     public Integer getId() {
         return id;
     }

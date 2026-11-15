@@ -14,6 +14,9 @@ public class Kedvezmenyek {
 
     }
 
+    public void setElnevezes(String elnevezes) { this.elnevezes = elnevezes; }
+    public void setSzazalek(Integer szazalek) { this.szazalek = szazalek; }
+
 
     public String getElnevezes() {
         return elnevezes;

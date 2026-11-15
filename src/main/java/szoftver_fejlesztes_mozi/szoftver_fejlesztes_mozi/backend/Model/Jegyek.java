@@ -28,6 +28,17 @@ public class Jegyek {
     public Integer getId() {
         return id;
     }
-
+    public Vetitesek getVetites_id() { return vetites_id; }
+    public void setVetites_id(Vetitesek vetites_id) { this.vetites_id = vetites_id; }
+    public Felhasznalok getRegisztralt_nev() { return regisztralt_nev; }
+    public void setRegisztralt_nev(Felhasznalok regisztralt_nev) { this.regisztralt_nev = regisztralt_nev; }
+    public Kedvezmenyek getKedvezmeny_nev() { return kedvezmeny_nev; }
+    public void setKedvezmeny_nev(Kedvezmenyek kedvezmeny_nev) { this.kedvezmeny_nev = kedvezmeny_nev; }
+    public Integer getSorszam() { return sorszam; }
+    public void setSorszam(Integer sorszam) { this.sorszam = sorszam; }
+    public Integer getOszlopszam() { return oszlopszam; }
+    public void setOszlopszam(Integer oszlopszam) { this.oszlopszam = oszlopszam; }
+    public Integer getVégleges_ar() { return végleges_ar; }
+    public void setVégleges_ar(Integer végleges_ar) { this.végleges_ar = végleges_ar; }
 
 }
