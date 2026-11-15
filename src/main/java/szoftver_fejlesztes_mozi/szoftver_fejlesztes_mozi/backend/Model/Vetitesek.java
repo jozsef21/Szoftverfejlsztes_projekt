@@ -17,7 +17,6 @@ public class Vetitesek {
     private Termek terem_id;
     private Date Kezdes_idopont;
     private Integer alapar;
-    private String nyelv;
 
     public Vetitesek()
     {
@@ -39,6 +38,4 @@ public class Vetitesek {
     public void setKezdes_idopont(Date kezdes_idopont) { Kezdes_idopont = kezdes_idopont;}
 
     public Integer getAlapar() { return alapar;}
-
-    public String getNyelv() { return nyelv;}
 }

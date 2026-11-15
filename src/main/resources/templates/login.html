@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<!-- a head rész injektálása -->
+<head th:replace="~{fragments :: common-head('Absolute Cinema')}"></head>
+
+<body class="centered_body">
+    <div class="prev_button" onclick="history.back()">Vissza</div>
+    <div class="login_container">
+        <h2 class="login_h2">Bejelentkezés</h2>
+        <div class="login_box">
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Felhasználónév:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Jelszó:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit">Belépés</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

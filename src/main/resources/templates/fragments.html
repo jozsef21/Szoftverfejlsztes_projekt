@@ -11,19 +11,22 @@
     <!-- Header rész, ami minden oldalnál megegyezik -->
     <div th:fragment="common-header">
         <header class="header">
-            <img th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
-            <h1 class="title">ABSOLUTE CINEMA</h1>
+            <img onclick="handleKezdolap()" th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
+            <h1 onclick="handleKezdolap()" class="title">ABSOLUTE CINEMA</h1>
+            <div class="login_button" onclick="handleLogin()">Bejelentkezés</div>
         </header>
         <nav class="menusor">
             <button onclick="handleMusor()">Moziműsor</button>
             <button onclick="handleTermeink()">termeink</button>
             <button onclick="handleBufe()">bufe menu</button>
             <button onclick="handleNyitva()">nyitva tartas</button>
-            <button onclick="handleLogin()">login</button>
         </nav>
 
         <!-- Közös funkcionalitás -->
         <script>
+            function handleKezdolap() {
+                window.location.href = "/";
+            }
             function handleMusor() {
                 window.location.href = "musor";
             }
@@ -37,7 +40,7 @@
                 alert("Vasárnaptól Csütörtökig: 10:00 - 20:00 \nPénteken és Szombaton 10:00-22:00");
             }
             function handleLogin() {
-                alert("Belépési felulet.");
+                window.location.href = "login";
             }
         </script>
     </div>
