@@ -11,8 +11,8 @@
     <!-- Header rész, ami minden oldalnál megegyezik -->
     <div th:fragment="common-header">
         <header class="header">
-            <img th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
-            <h1 class="title">ABSOLUTE CINEMA</h1>
+            <img onclick="handleKezdolap()" th:src="@{/images/logo.png}" alt="Logo" class="logo" id="logoImageView">
+            <h1 onclick="handleKezdolap()" class="title">ABSOLUTE CINEMA</h1>
             <div class="login_button" onclick="handleLogin()">Bejelentkezés</div>
         </header>
         <nav class="menusor">
@@ -24,6 +24,9 @@
 
         <!-- Közös funkcionalitás -->
         <script>
+            function handleKezdolap() {
+                window.location.href = "/";
+            }
             function handleMusor() {
                 window.location.href = "musor";
             }
