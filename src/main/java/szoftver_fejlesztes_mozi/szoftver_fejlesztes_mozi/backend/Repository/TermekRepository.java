@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Termek;
 
 @Repository
-public interface TermekRepository extends JpaRepository<Termek, Long> {
+public interface TermekRepository extends JpaRepository<Termek, Integer> {
 
 }

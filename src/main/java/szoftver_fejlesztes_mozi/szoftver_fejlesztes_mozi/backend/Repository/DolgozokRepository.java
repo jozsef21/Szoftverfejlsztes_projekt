@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Dolgozok;
 
 @Repository
-public interface DolgozokRepository extends JpaRepository<Dolgozok, Long> {
+public interface DolgozokRepository extends JpaRepository<Dolgozok, Integer> {
 
 }

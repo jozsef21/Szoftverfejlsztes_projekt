@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Filmek;
 
 @Repository
-public interface FilmekRepository extends JpaRepository<Filmek, Long> {
+public interface FilmekRepository extends JpaRepository<Filmek, String> {
 
 }

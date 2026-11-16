@@ -1,4 +1,4 @@
-id;nev;sorok_szama;oszlopk_szama
-1;Nagyterem;10;12
-2;Kisterem;6;8
-3;VIP terem;4;6
+nev,sorok_szama,oszlopk_szama
+Nagyterem,10,12
+Kisterem,6,8
+VIP terem,4,6

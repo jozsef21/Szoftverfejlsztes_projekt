@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Vetitesek;
 
 @Repository
-public interface VetitesekRepository extends JpaRepository<Vetitesek, Long> {
+public interface VetitesekRepository extends JpaRepository<Vetitesek, Integer> {
 
 
 }

@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Felhasznalok;
 
 @Repository
-public interface FelhasznalokRepository extends JpaRepository<Felhasznalok, Long> {
+public interface FelhasznalokRepository extends JpaRepository<Felhasznalok, String> {
 
 }

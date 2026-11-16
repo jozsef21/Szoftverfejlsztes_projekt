@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Jegyek;
 
 @Repository
-public interface JegyekRepository extends JpaRepository<Jegyek, Long> {
+public interface JegyekRepository extends JpaRepository<Jegyek, Integer> {
 
 }

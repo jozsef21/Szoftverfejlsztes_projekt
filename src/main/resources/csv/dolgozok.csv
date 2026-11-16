@@ -1,4 +1,4 @@
-id;nev;munkakor
-1;Kiss Péter;Pénztáros
-2;Nagy Anna;Büfés
-3;Tóth Gábor;Vetítő
+nev,munkakor
+Kiss Péter,Pénztáros
+Nagy Anna,Büfés
+Tóth Gábor,Vetítő

@@ -1,5 +1,5 @@
-elnevezes;szazalek
-Nincs;0
-Diák;20
-Nyugdíjas;30
-Gyerek (16 év alatt);50
+elnevezes,szazalek
+Nincs,0
+Diák,20
+Nyugdíjas,30
+Gyerek (6 év alatt),50
