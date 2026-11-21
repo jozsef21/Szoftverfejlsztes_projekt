@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .header {
     height: 110px;
     background-color: #f4f1ea;
@@ -41,7 +42,7 @@ body {
     margin-left: 20px;
 }
 
-.menusor{
+.menusor {
     height: 40px;
     background-color: #ded6cd;
     border-bottom: 2px solid #b5ada6;
@@ -85,7 +86,7 @@ body {
     font-size: 14px;
 }
 
-.filmblokk, .teremblokk, .menublokk, .kis_menublokk {
+.teremblokk, .menublokk, .kis_menublokk {
     background-color: #c4c4c4;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -94,14 +95,27 @@ body {
     display: flex;
 }
 
-.filmblokk, .teremblokk, .menublokk {
+/* --- FRISSÍTVE: Nagyobb és átláthatóbb filmblokk --- */
+.filmblokk {
+    width: 950px;          /* Növelhetjük a szélességet (a régi 800px helyett) */
+    max-width: 100%;
+    min-height: 280px;     /* Növeljük a minimális magasságot is, hogy elférjen benne a nagyobb kép */
+    background-color: #c4c4c4;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 20px;         /* Több belső hely a széleken */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;             /* Nagyobb távolság a kép és a szöveg között */
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.teremblokk, .menublokk {
     width: 800px;
     max-width: 100%;
     gap: 15px;
-}
-
-.filmblokk {
-    height: 200px;
 }
 
 .teremblokk {
@@ -128,25 +142,37 @@ body {
     gap: 15px;
 }
 
-.filmkep, .teremkep, .kis_menukep {
+.teremkep, .kis_menukep {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
 }
 
-.filmkep, .teremkep {
-    width: 120px;
+/* --- FRISSÍTVE: Nagyobb filmkép / plakát doboz --- */
+.filmkep {
+    width: 160px;
+    height: 230px;
+    background-color: white;
     border: 1px solid black;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    overflow: hidden; /* Biztosítja, hogy ami kilógna a 140x200-ból, az ne látszódjon */
 }
 
-.filmkep {
+.filmkep img {
+    width: 100%;
     height: 100%;
+    object-fit: cover; /* Arányosan kitölti a dobozt anélkül, hogy torzulna */
 }
 
 .teremkep {
     width: 150px;
     flex-shrink: 0;
+    border: 1px solid black;
 }
 
 .kis_menukep {
@@ -158,30 +184,36 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 1px;
+    gap: 5px;
+    flex: 1;
 }
 
 .info h2 {
-    font-size: 37px;
+    font-size: 32px;
     font-weight: bold;
     margin: 0;
 }
 
 .info .mufaj {
-    font-size: 22px;
+    font-size: 18px;
     color: #666666;
     margin: 0 0 10px 0;
 }
 
-
 .vetido {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 5px;
 }
 
 .vetido button {
     padding: 6px 14px;
     cursor: pointer;
+    background-color: #f4f0ea;
+    border: 1px solid #777;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
 h3 {

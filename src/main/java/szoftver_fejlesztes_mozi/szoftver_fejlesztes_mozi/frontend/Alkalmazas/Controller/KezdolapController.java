@@ -2,7 +2,9 @@ package szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Alkalmazas.Co
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import org.springframework.stereotype.Component;
 
+@Component
 public class KezdolapController {
 
     @FXML private Button dolgozokGomb;

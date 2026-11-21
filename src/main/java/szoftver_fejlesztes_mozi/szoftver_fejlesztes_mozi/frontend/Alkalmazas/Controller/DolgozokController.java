@@ -1,23 +1,49 @@
 package szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Alkalmazas.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import org.springframework.stereotype.Component;
+import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Model.Dolgozok;
+import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.Repository.DolgozokRepository;
 
+import java.util.List;
 import java.util.Optional;
 
+@Component
 public class DolgozokController {
 
-    @FXML private TableView<Dolgozo> tabla;
-    @FXML private TableColumn<Dolgozo, String> nevOszlop;
-    @FXML private TableColumn<Dolgozo, String> beosztasOszlop;
+    private final DolgozokRepository dolgozokRepository;
+
+    @FXML private TableView<Dolgozok> tabla;
+    @FXML private TableColumn<Dolgozok, String> nevOszlop;
+    @FXML private TableColumn<Dolgozok, String> beosztasOszlop;
+
+    private ObservableList<Dolgozok> dolgozokLista = FXCollections.observableArrayList();
+
+    // Konstruktor alapú injekció közvetlenül a Springtől
+    public DolgozokController(DolgozokRepository dolgozokRepository) {
+        this.dolgozokRepository = dolgozokRepository;
+    }
 
     @FXML
     private void initialize() {
+        // Oszlopok összekötése a Dolgozok entitás mezőivel
         nevOszlop.setCellValueFactory(new PropertyValueFactory<>("nev"));
-        beosztasOszlop.setCellValueFactory(new PropertyValueFactory<>("beosztas"));
-        tabla.setItems(Adatok.DOLGOZOK);
+        beosztasOszlop.setCellValueFactory(new PropertyValueFactory<>("munkakor"));
+
+        tabla.setItems(dolgozokLista);
+
+        // Adatok lekérése az adatbázisból és betöltése a táblázatba
+        adatokBetolteseAdatbazisbol();
+    }
+
+    private void adatokBetolteseAdatbazisbol() {
+        List<Dolgozok> adatok = dolgozokRepository.findAll();
+        dolgozokLista.setAll(adatok);
     }
 
     @FXML
@@ -25,7 +51,7 @@ public class DolgozokController {
         TextField nev = new TextField();
         nev.setPromptText("Név");
         TextField beosztas = new TextField();
-        beosztas.setPromptText("Beosztás");
+        beosztas.setPromptText("munkakor");
 
         GridPane racs = new GridPane();
         racs.setHgap(10);
@@ -41,18 +67,31 @@ public class DolgozokController {
         Optional<ButtonType> eredmeny = dialog.showAndWait();
         if (eredmeny.isPresent() && eredmeny.get() == ButtonType.OK
                 && !nev.getText().trim().isEmpty() && !beosztas.getText().trim().isEmpty()) {
-            Adatok.DOLGOZOK.add(new Dolgozo(nev.getText().trim(), beosztas.getText().trim()));
+            // 1. Létrehozzuk az új entitást
+            Dolgozok uj = new Dolgozok();
+            uj.setNev(nev.getText().trim());
+            uj.setMunkakor(beosztas.getText().trim());
+
+            // 2. Elmentjük az adatbázisba a Repository-n keresztül
+            dolgozokRepository.save(uj);
+
+            // 3. Frissítjük a táblázatot az adatbázis tartalmával
+            adatokBetolteseAdatbazisbol();
         }
     }
 
     @FXML
     private void dolgozoEltavolitas() {
-        Dolgozo kivalasztott = tabla.getSelectionModel().getSelectedItem();
+        Dolgozok kivalasztott = tabla.getSelectionModel().getSelectedItem();
         if (kivalasztott == null) {
             new Alert(Alert.AlertType.WARNING, "Válassz ki egy dolgozót a listából!").showAndWait();
             return;
         }
-        Adatok.DOLGOZOK.remove(kivalasztott);
+        // Törlés az adatbázisból a Repository segítségével
+        dolgozokRepository.delete(kivalasztott);
+
+        // Táblázat frissítése
+        adatokBetolteseAdatbazisbol();
     }
 
     @FXML

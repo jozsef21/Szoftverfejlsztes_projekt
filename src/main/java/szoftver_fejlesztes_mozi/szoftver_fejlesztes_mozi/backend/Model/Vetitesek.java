@@ -11,7 +11,7 @@ import java.util.Date;
 public class Vetitesek {
     @Id
     @GeneratedValue
-    private Integer ID;
+    private Integer id;
     @ManyToOne
     @JoinColumn(name = "filmek_id")
     private Filmek filmek_id;

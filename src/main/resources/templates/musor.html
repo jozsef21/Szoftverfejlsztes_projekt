@@ -4,43 +4,49 @@
 <head th:replace="~{/fragments :: common-head('Absolute Cinema')}"></head>
 
 <body class="centered_body">
-    <div class="fo">
+<div class="fo">
 
-        <!-- header file tartalmának injektálása -->
-        <div th:replace="~{/fragments :: common-header}"></div>
+    <!-- header file tartalmának injektálása -->
+    <div th:replace="~{/fragments :: common-header}"></div>
 
-        <div class="tartalom">
-            <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
+    <div class="tartalom">
+        <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
 
-            <div class="filmblokk">
-                <div class="filmkep"><span>Film</span></div>
-                <div class="info">
-                    <h2>Ponyvaregény</h2>
-                    <p class="mufaj">Krimi / Dráma</p>
-                    <div class="vetido">
-                        <button>10:00</button>
-                        <button>13:00</button>
-                        <button>17:00</button>
-                    </div>
-                </div>
+        <!-- Végigmegyünk a filmek és vetítések map-en a meglévő .filmblokk osztállyal -->
+        <div th:each="entry : ${musorLista}" class="filmblokk">
+
+            <!-- Plakát kép vagy alap doboz a meglévő .filmkep osztállyal -->
+            <div class="filmkep">
+                <img th:if="${entry.key.plakat != null}" th:src="@{${entry.key.plakat}}" alt="Plakát" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span th:if="${entry.key.plakat == null}">Film</span>
             </div>
 
-            <div class="filmblokk">
-                <div class="filmkep"><span>Film</span></div>
-                <div class="info">
-                    <h2>Mátrix</h2>
-                    <p class="mufaj">Sci-fi</p>
-                    <div class="vetido">
-                        <button>10:00</button>
-                        <button>13:00</button>
-                        <button>17:00</button>
-                    </div>
+            <!-- Szöveges adatok és gombok a meglévő .info osztállyal -->
+            <div class="info">
+                <!-- Film címe (autómatikusan veszi a .info h2 stílust) -->
+                <h2 th:text="${entry.key.cim}">Film Címe</h2>
+
+                <!-- Műfaj a meglévő .mufaj osztállyal -->
+                <p class="mufaj" th:text="${entry.key.mufaj}">Műfaj</p>
+
+                <!-- Időpont gombok a meglévő .vetido osztállyal -->
+                <div class="vetido">
+                    <th:block th:each="vetites : ${entry.value}">
+                        <form th:action="@{/jegyek}" method="post">
+                            <!-- Ha a vetités ID-ra hivatkozol, figyelj az entitás mezőnevére! -->
+                            <input type="hidden" name="vetitesId" th:value="${vetites.id}"/>
+
+                            <button type="submit" th:text="${#temporals.format(vetites.kezdes_idopont, 'HH:mm')}">10:00</button>
+                        </form>
+                    </th:block>
                 </div>
             </div>
 
         </div>
 
     </div>
+
+</div>
 
 </body>
 </html>

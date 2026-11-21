@@ -10,11 +10,11 @@ public class WebViewController {
     public String kezdoOldal() {
         return "startlap";
     }
-
+/*
     @GetMapping("/musor")
     public String musorOldal() {
         return "musor";
-    }
+    }*/
 
     @GetMapping("/termek")
     public String termekOldal() {
