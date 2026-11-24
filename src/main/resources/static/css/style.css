@@ -1,5 +1,5 @@
 body {
-    background-color: #303030;
+    background-color: #0B132B;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -22,8 +22,7 @@ body {
 
 .header {
     height: 110px;
-    background-color: #f4f1ea;
-    border-bottom: 1px solid #cccccc;
+    background-color: #3A506B;
     display: flex;
     align-items: center;
     padding: 0 20px 0 10px;
@@ -44,8 +43,7 @@ body {
 
 .menusor {
     height: 40px;
-    background-color: #ded6cd;
-    border-bottom: 2px solid #b5ada6;
+    background-color: #5BC0BE;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,13 +84,16 @@ body {
     font-size: 14px;
 }
 
-.teremblokk, .menublokk, .kis_menublokk {
-    background-color: #c4c4c4;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 8px;
+.teremblokk, .menublokk, .kis_menublokk, .filmblokk {
+    background-color: #0682d6;
+    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
+    border-radius: 5px;
+}
+
+.teremblokk, .menublokk, .kis_menublokk {
+    padding: 8px;
 }
 
 /* --- FRISSÍTVE: Nagyobb és átláthatóbb filmblokk --- */
@@ -100,12 +101,7 @@ body {
     width: 950px;          /* Növelhetjük a szélességet (a régi 800px helyett) */
     max-width: 100%;
     min-height: 280px;     /* Növeljük a minimális magasságot is, hogy elférjen benne a nagyobb kép */
-    background-color: #c4c4c4;
-    border: 1px solid #000000;
-    border-radius: 5px;
     padding: 20px;         /* Több belső hely a széleken */
-    box-sizing: border-box;
-    display: flex;
     flex-direction: row;
     gap: 25px;             /* Nagyobb távolság a kép és a szöveg között */
     align-items: flex-start;
@@ -196,7 +192,7 @@ body {
 
 .info .mufaj {
     font-size: 18px;
-    color: #666666;
+    color: mintcream;
     margin: 0 0 10px 0;
 }
 
@@ -210,9 +206,7 @@ body {
 .vetido button {
     padding: 6px 14px;
     cursor: pointer;
-    background-color: #f4f0ea;
-    border: 1px solid #777;
-    border-radius: 4px;
+    border: 1px solid grey;
     font-weight: bold;
 }
 
@@ -221,9 +215,12 @@ h3 {
     font-weight: bold;
 }
 
-.login_button, .nav-box, .prev_button {
-    background-color: #c4c4c4;
+.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .vetido button {
+    background-color: #adb3c9;
     border-radius: 5px;
+}
+
+.login_button, .nav-box, .prev_button {
     cursor: pointer;
     font-weight: bold;
     display: flex;
@@ -270,9 +267,7 @@ h3 {
 }
 
 .jobb-oldal {
-    background-color: #c4c4c4;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    border: 1px solid black;
     padding: 20px;
     box-sizing: border-box;
     align-items: center;
@@ -308,9 +303,7 @@ h3 {
 }
 
 .login_box {
-    background-color: #c4c4c4;
-    border: 1px solid #000000;
-    border-radius: 5px;
+    border: 1px solid black;
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
