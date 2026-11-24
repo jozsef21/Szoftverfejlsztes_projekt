@@ -30,9 +30,4 @@ public class WebViewController {
     public String loginOldal() {
         return "login";
     }
-    //teszt a jegyekhez
-    @GetMapping("/jegy")
-    public String jegyekOldal() {
-        return "jegy";
-    }
 }
