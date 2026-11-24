@@ -4,6 +4,43 @@
 <head th:replace="~{fragments :: common-head('Absolute Cinema')}"></head>
 
 <body class="centered_body">
+    <div class="fo">
+        <!-- header rész injektálása -->
+        <div th:replace="~{/fragments :: common-header}"></div>
 
+        <div>
+            <div class="filmkep"></div>
+            <div>
+                <h3>Cim</h3>
+                <p>mufaj</p>
+                <p>rendezo</p>
+                <p>kiadas</p>
+            </div>
+        </div>
+        <form>
+            <label>jegyek darabszáma:</label>
+            <!-- 1. Terem with smaller seat containers -->
+            <div class="terem">
+                <div class="szek">
+                    <!-- Seats are generated or rendered by row (1..N) and seat (1..M) -->
+                </div>
+            </div>
+            <!-- 3. Selected seats in (row, seat) number pairs -->
+            <div>
+                <label>kijelölt helyek:</label>
+                <div>
+                    <div>1,2</div>
+                </div>
+            </div>
+
+            <!-- 4. Discount selection -->
+            <div>
+                <label>kedvezmény:</label>
+            </div>
+
+            <!-- 5. Buy button -->
+            <button type="submit">Vásárlás</button>
+        </form>
+    </div>
 </body>
 </html>

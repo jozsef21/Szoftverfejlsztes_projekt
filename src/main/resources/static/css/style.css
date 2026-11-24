@@ -364,3 +364,7 @@ form button[type="submit"] {
     top: 15px;
     left: 15px;
 }
+
+input {
+    background-color: mintcream;
+}
