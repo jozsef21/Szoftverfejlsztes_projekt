@@ -21,8 +21,8 @@ body {
 }
 
 .header {
-    height: 110px;
     background-color: #3A506B;
+    height: 110px;
     display: flex;
     align-items: center;
     padding: 0 20px 0 10px;
@@ -36,21 +36,29 @@ body {
 
 .title {
     font-style: italic;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: normal;
     margin-left: 20px;
+    color: mintcream;
+}
+
+.title, .login_h2, .info .mufaj, .leiras {
+    color: mintcream;
 }
 
 .menusor {
-    height: 40px;
-    background-color: #5BC0BE;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
 
-.menu-bar button {
+.menusor, form button[type="submit"] {
+    background-color: #5BC0BE;
+}
+
+.menusor button {
     padding: 4px 12px;
     cursor: pointer;
 }
@@ -85,7 +93,7 @@ body {
 }
 
 .teremblokk, .menublokk, .kis_menublokk, .filmblokk {
-    background-color: #0682d6;
+    background-color: #06428a;
     border: 1px solid black;
     box-sizing: border-box;
     display: flex;
@@ -190,9 +198,12 @@ body {
     margin: 0;
 }
 
+.info h2, h3 {
+    color: #b0c1cf;
+}
+
 .info .mufaj {
     font-size: 18px;
-    color: mintcream;
     margin: 0 0 10px 0;
 }
 
@@ -215,7 +226,7 @@ h3 {
     font-weight: bold;
 }
 
-.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .vetido button {
+.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .menusor button {
     background-color: #adb3c9;
     border-radius: 5px;
 }
@@ -296,7 +307,6 @@ h3 {
 }
 
 .login_h2 {
-    color: #c4c4c4;
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -329,7 +339,7 @@ form {
 .form-group input {
     padding: 8px 10px;
     font-size: 16px;
-    border: 1px solid #777;
+    border: 1px solid grey;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -340,7 +350,6 @@ form button[type="submit"] {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    background-color: #f4f0ea;
     border-radius: 4px;
 }
 
