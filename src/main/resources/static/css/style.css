@@ -42,7 +42,7 @@ body {
     color: mintcream;
 }
 
-.title, .login_h2, .info .mufaj, .leiras {
+.title, .login_h2, .info .mufaj, .leiras, h4 {
     color: mintcream;
 }
 
@@ -54,7 +54,7 @@ body {
     gap: 15px;
 }
 
-.menusor, form button[type="submit"] {
+.menusor, form button[type="submit"], .kedvezmeny_button {
     background-color: #5BC0BE;
 }
 
@@ -92,9 +92,10 @@ body {
     font-size: 14px;
 }
 
-.teremblokk, .menublokk, .kis_menublokk, .filmblokk {
+
+
+.teremblokk, .menublokk, .kis_menublokk, .filmblokk, .terem, .kedvezmeny, .kedvezmeny_box {
     background-color: #06428a;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     border-radius: 5px;
@@ -150,14 +151,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: mintcream;
 }
 
 /* --- FRISSÍTVE: Nagyobb filmkép / plakát doboz --- */
 .filmkep {
     width: 160px;
     height: 230px;
-    background-color: white;
+    background-color: mintcream;
     border: 1px solid black;
     flex-shrink: 0;
     display: flex;
@@ -198,10 +199,6 @@ body {
     margin: 0;
 }
 
-.info h2, h3 {
-    color: #b0c1cf;
-}
-
 .info .mufaj {
     font-size: 18px;
     margin: 0 0 10px 0;
@@ -226,7 +223,11 @@ h3 {
     font-weight: bold;
 }
 
-.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .menusor button {
+.info h2, h3, .big_label {
+    color: #adb3c9;
+}
+
+.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .menusor button, .szek, .szek_magyarazat {
     background-color: #adb3c9;
     border-radius: 5px;
 }
@@ -353,7 +354,7 @@ form button[type="submit"] {
     border-radius: 4px;
 }
 
-.prev_button {
+.prev_button, .button_right {
     width: 200px;
     max-width: 400px;
     font-size: 20px;
@@ -361,10 +362,149 @@ form button[type="submit"] {
     height: 80px;
     align-items: center;
     position: absolute;
+}
+
+.prev_button {
+    width: 200px;
     top: 15px;
     left: 15px;
 }
 
 input {
     background-color: mintcream;
+}
+
+
+/*jegyvasarlas stilus*/
+.ket_oszlop {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.cim {
+    text-align: left;
+    font-size: 40px;
+}
+
+.big_label {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.button_right {
+    width: 220px;
+    right: 15px;
+    bottom: 20px;
+}
+
+.terem {
+    width: 800px;
+    height: 800px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hegy_form {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.szek_magyarazat, .szek {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.szek {
+    cursor: pointer;
+}
+
+#selected {
+    background-color: #43e898;
+}
+
+#taken {
+    background-color: #de7257;
+}
+
+
+.sor {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.sor p, .terem p , .kijelolt_helyek p{
+    color: mintcream;
+    margin: 0 15px 0 0;
+}
+
+.vaszon {
+    width: 80%;
+    text-align: center;
+    color: mintcream;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    border-bottom: 3px solid mintcream;
+}
+
+.kedvezmeny_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.kedvezmeny_sor {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kedvezmeny, .kedvezmeny_box, .kedvezmeny_button {
+    font-weight: bold;
+    font-size: 20px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.kedvezmeny, .kedvezmeny_box {
+    color: mintcream;
+}
+
+.kedvezmeny {
+    width: 170px;
+    padding: 0 12px;
+}
+
+.kedvezmeny_box {
+    width: 48px;
+}
+
+.kedvezmeny_button {
+    width: 44px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 5px;
 }
