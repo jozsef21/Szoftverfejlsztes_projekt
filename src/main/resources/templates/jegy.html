@@ -4,6 +4,75 @@
 <head th:replace="~{fragments :: common-head('Absolute Cinema')}"></head>
 
 <body class="centered_body">
+    <div class="fo">
+        <!-- header rész injektálása -->
+        <div th:replace="~{/fragments :: common-header}"></div>
 
+        <div class="ket_oszlop">
+            <div class="filmkep"></div>
+            <div>
+                <h3 class="cim">Cim</h3>
+                <h4>mufaj</h4>
+                <h4>rendezo</h4>
+                <h4>kiadas</h4>
+            </div>
+        </div>
+        <form class="hegy_form" method="post">
+            <div class="center">
+                <div class="terem">
+                    <div class="sor">
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                    </div>
+                    <div class="sor">
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                    </div>
+                    <div class="sor">
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                        <div class="szek"> </div>
+                    </div>
+                    <div class="vaszon">Vászon</div>
+                </div>
+                <div class="sor">
+                    <div class="szek_magyarazat"></div>
+                    <p> - szabad hely</p>
+                    <div class="szek_magyarazat" id="taken"></div>
+                    <p> - foglalt hely</p>
+                    <div class="szek_magyarazat" id="selected"></div>
+                    <p> - ön által választott hely</p>
+                </div>
+
+                <label class="big_label">jegyek darabszáma: <span>0</span></label>
+
+                <label class="big_label">kijelölt helyek:</label>
+                <div class="kijelolt_helyek">
+                    <p>1.sor, 2.szék</p>
+                    <p>1.sor, 3.szék</p>
+                </div>
+                <label class="big_label">kedvezmény:</label>
+                <div class="kedvezmeny_lista">
+                    <div class="kedvezmeny_sor">
+                        <div class="kedvezmeny">Diák</div>
+                        <div class="kedvezmeny_box">0</div>
+                        <button type="button" class="kedvezmeny_button" onclick="">+</button>
+                        <button type="button" class="kedvezmeny_button" onclick="">-</button>
+                    </div>
+
+                    <div class="kedvezmeny_sor">
+                        <div class="kedvezmeny">Nyugdíjas</div>
+                        <div class="kedvezmeny_box">0</div>
+                        <button type="button" class="kedvezmeny_button" onclick="">+</button>
+                        <button type="button" class="kedvezmeny_button" onclick="">-</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="button_right">Vásárlás</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

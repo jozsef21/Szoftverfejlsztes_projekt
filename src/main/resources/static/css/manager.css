@@ -1,0 +1,64 @@
+.root {
+    -fx-background-color: #141414;
+    -fx-font-family: "Segoe UI";
+}
+
+.label {
+    -fx-text-fill: #f5f5f5;
+}
+
+#hibaCimke {
+    -fx-text-fill: #ff6b6b;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #23232f;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #8a8a99;
+    -fx-padding: 8 12 8 12;
+}
+
+.button {
+    -fx-background-color: #024fba;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #366dba;
+}
+
+.table-view {
+    -fx-background-color: #1c1c27;
+    -fx-control-inner-background: #1c1c27;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background,
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: #2a2a38;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-background-color: #1c1c27;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #20202c;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #024fba;
+}
+
+.table-cell {
+    -fx-text-fill: white;
+}

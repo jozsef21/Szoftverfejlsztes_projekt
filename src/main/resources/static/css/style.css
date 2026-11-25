@@ -361,8 +361,151 @@ form button[type="submit"] {
     height: 80px;
     align-items: center;
     position: absolute;
+}
+
+.prev_button {
+    width: 200px;
     top: 15px;
     left: 15px;
+}
+
+input {
+    background-color: mintcream;
+}
+
+
+/*jegyvasarlas stilus*/
+.ket_oszlop {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+.cim {
+    text-align: left;
+    font-size: 40px;
+}
+
+.big_label {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.button_right {
+    width: 220px;
+    right: 15px;
+    bottom: 20px;
+}
+
+.terem {
+    width: 800px;
+    height: 800px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hegy_form {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.szek_magyarazat, .szek {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.szek {
+    cursor: pointer;
+}
+
+#selected {
+    background-color: #43e898;
+}
+
+#taken {
+    background-color: #de7257;
+}
+
+
+.sor {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.sor p, .terem p , .kijelolt_helyek p{
+    color: mintcream;
+    margin: 0 15px 0 0;
+}
+
+.vaszon {
+    width: 80%;
+    text-align: center;
+    color: mintcream;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+    border-bottom: 3px solid mintcream;
+}
+
+.kedvezmeny_lista {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.kedvezmeny_sor {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.kedvezmeny, .kedvezmeny_box, .kedvezmeny_button {
+    font-weight: bold;
+    font-size: 20px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.kedvezmeny, .kedvezmeny_box {
+    color: mintcream;
+}
+
+.kedvezmeny {
+    width: 170px;
+    padding: 0 12px;
+}
+
+.kedvezmeny_box {
+    width: 48px;
+}
+
+.kedvezmeny_button {
+    width: 44px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 5px;
 }
 
 .ajanlott_kontener {
