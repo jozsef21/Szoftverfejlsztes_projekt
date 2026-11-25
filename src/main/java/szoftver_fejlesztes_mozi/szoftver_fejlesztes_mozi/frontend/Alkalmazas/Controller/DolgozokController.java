@@ -68,9 +68,10 @@ public class DolgozokController {
         if (eredmeny.isPresent() && eredmeny.get() == ButtonType.OK
                 && !nev.getText().trim().isEmpty() && !beosztas.getText().trim().isEmpty()) {
             // 1. Létrehozzuk az új entitást
-            Dolgozok uj = new Dolgozok();
-            uj.setNev(nev.getText().trim());
-            uj.setMunkakor(beosztas.getText().trim());
+            Dolgozok uj = Dolgozok.builder()
+                    .nev(nev.getText().trim())
+                    .munkakor(beosztas.getText().trim())
+                    .build();
 
             // 2. Elmentjük az adatbázisba a Repository-n keresztül
             dolgozokRepository.save(uj);

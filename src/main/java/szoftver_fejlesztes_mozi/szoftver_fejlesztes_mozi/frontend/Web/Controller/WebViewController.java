@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WebViewController {
-
+/*
     @GetMapping("/")
     public String kezdoOldal() {
         return "startlap";
     }
-/*
+
     @GetMapping("/musor")
     public String musorOldal() {
         return "musor";

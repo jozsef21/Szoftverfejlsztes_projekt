@@ -80,14 +80,19 @@ public class VetitesekController {
         Optional<ButtonType> eredmeny = dialog.showAndWait();
         if (eredmeny.isPresent() && eredmeny.get() == ButtonType.OK
                 && !film.getText().trim().isEmpty() && !terem.getText().trim().isEmpty() && !idopont.getText().trim().isEmpty()) {
-            // 1. Létrehozzuk az új entitást
-            Vetitesek uj = new Vetitesek();
-            Filmek filmEntity = filmekRepository.findById(film.getText().trim()).orElse(null);;
-            uj.setFilmek_id(filmEntity);
+
+            // Adatok lekérése a kapcsolódó entitásokhoz
+            Filmek filmEntity = filmekRepository.findById(film.getText().trim()).orElse(null);
             Integer teremID = Integer.parseInt(terem.getText().trim());
-            Termek teremEntity =termekRepository.findById(teremID).orElse(null);;
-            uj.setTerem_id(teremEntity);
-            uj.setKezdes_idopont(LocalDateTime.parse(idopont.getText().trim()));
+            Termek teremEntity = termekRepository.findById(teremID).orElse(null);
+
+            // 1. Létrehozzuk az új entitást Builder mintával
+            Vetitesek uj = Vetitesek.builder()
+                    .filmek_id(filmEntity)
+                    .terem_id(teremEntity)
+                    .Kezdes_idopont(LocalDateTime.parse(idopont.getText().trim()))
+                    .alapar(3000)
+                    .build();
             // 2. Elmentjük az adatbázisba a Repository-n keresztül
             vetitesekRepository.save(uj);
 
