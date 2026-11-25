@@ -42,7 +42,7 @@ body {
     color: mintcream;
 }
 
-.title, .login_h2, .info .mufaj, .leiras {
+.title, .login_h2, .info .mufaj, .leiras, h4 {
     color: mintcream;
 }
 
@@ -54,7 +54,7 @@ body {
     gap: 15px;
 }
 
-.menusor, form button[type="submit"] {
+.menusor, form button[type="submit"], .kedvezmeny_button {
     background-color: #5BC0BE;
 }
 
@@ -92,9 +92,8 @@ body {
     font-size: 14px;
 }
 
-.teremblokk, .menublokk, .kis_menublokk, .filmblokk {
+.teremblokk, .menublokk, .kis_menublokk, .filmblokk, .terem, .kedvezmeny, .kedvezmeny_box {
     background-color: #06428a;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
     border-radius: 5px;
@@ -150,14 +149,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: mintcream;
 }
 
 /* --- FRISSÍTVE: Nagyobb filmkép / plakát doboz --- */
 .filmkep {
     width: 160px;
     height: 230px;
-    background-color: white;
+    background-color: mintcream;
     border: 1px solid black;
     flex-shrink: 0;
     display: flex;
@@ -198,10 +197,6 @@ body {
     margin: 0;
 }
 
-.info h2, h3 {
-    color: #b0c1cf;
-}
-
 .info .mufaj {
     font-size: 18px;
     margin: 0 0 10px 0;
@@ -226,7 +221,11 @@ h3 {
     font-weight: bold;
 }
 
-.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .menusor button {
+.info h2, h3, .big_label {
+    color: #adb3c9;
+}
+
+.login_button, .nav-box, .prev_button, .jobb-oldal, .login_box, .menusor button, .szek, .szek_magyarazat {
     background-color: #adb3c9;
     border-radius: 5px;
 }
@@ -353,7 +352,7 @@ form button[type="submit"] {
     border-radius: 4px;
 }
 
-.prev_button {
+.prev_button, .button_right {
     width: 200px;
     max-width: 400px;
     font-size: 20px;
@@ -511,12 +510,6 @@ input {
 .ajanlott_kontener {
     margin-top: 30px;
     width: 100%;
-}
-
-.ajanlott_cim {
-    color: #f4f1ea;
-    text-align: center;
-    margin-bottom: 15px;
 }
 
 .ajanlott_grid {
