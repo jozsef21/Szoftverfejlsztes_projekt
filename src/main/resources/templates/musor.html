@@ -32,7 +32,7 @@
                 <!-- Időpont gombok a meglévő .vetido osztállyal -->
                 <div class="vetido">
                     <th:block th:each="vetites : ${entry.value}">
-                        <form th:action="@{/jegyek}" method="post">
+                        <form th:action="@{/jegy}" method="post">
                             <!-- Ha a vetités ID-ra hivatkozol, figyelj az entitás mezőnevére! -->
                             <input type="hidden" name="vetitesId" th:value="${vetites.id}"/>
 

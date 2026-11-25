@@ -2,6 +2,7 @@ package szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Web.Controlle
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class WebViewController {
@@ -15,6 +16,11 @@ public class WebViewController {
     public String musorOldal() {
         return "musor";
     }*/
+
+    @PostMapping("/jegy")
+    public String jegyOldal() {
+        return "jegy";
+    }
 
     @GetMapping("/termek")
     public String termekOldal() {
