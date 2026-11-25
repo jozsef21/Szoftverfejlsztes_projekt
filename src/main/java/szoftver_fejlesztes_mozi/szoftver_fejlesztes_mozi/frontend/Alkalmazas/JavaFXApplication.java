@@ -1,6 +1,7 @@
 package szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Alkalmazas;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,7 +10,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.backend.MoziSzerverApplication;
 import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.Alkalmazas.Controller.Navigator;
-import szoftver_fejlesztes_mozi.szoftver_fejlesztes_mozi.frontend.BackendManager;
+
+import java.util.Optional;
 
 public class JavaFXApplication extends Application {
 
@@ -17,10 +19,10 @@ public class JavaFXApplication extends Application {
 
     @Override
     public void init() throws Exception {
-// Itt indítjuk el a Spring Boot-ot a JavaFX indulása előtt
+        leallas();
+
         springContext = SpringApplication.run(MoziSzerverApplication.class);
 
-        // Itt átadjuk a kontextust a Navigatornek, hogy a vezérlők megkapják a Repository-kat
         Navigator.setApplicationContext(springContext);
     }
 
@@ -39,9 +41,23 @@ public class JavaFXApplication extends Application {
     @Override
     public void stop() throws Exception {
         if (springContext != null) {
-            springContext.stop();
+            springContext.close();
         }
         super.stop();
+        Platform.exit();
+        System.exit(0);
+    }
+
+    private void leallas() {
+        Optional<ProcessHandle> szulo = ProcessHandle.current().parent();
+        while (szulo.isPresent()) {
+            ProcessHandle folyamat = szulo.get();
+            folyamat.onExit().thenRun(() -> {
+                Platform.exit();
+                System.exit(0);
+            });
+            szulo = folyamat.parent();
+        }
     }
 
     public static void main(String[] args) {
