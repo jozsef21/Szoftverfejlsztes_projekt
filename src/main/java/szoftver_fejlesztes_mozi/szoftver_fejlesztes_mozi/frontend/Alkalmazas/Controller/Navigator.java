@@ -21,7 +21,6 @@ public class Navigator {
             Stage stage = (Stage) forras.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(Navigator.class.getResource("/szoftver_fejlesztes_mozi/szoftver_fejlesztes_mozi/" + fxmlNev));
 
-            // ITT A LÉNYEG: Megmondjuk az FXMLLoadernek, hogy a Spring konténerből kérje el a kontrollert
             if (applicationContext != null) {
                 loader.setControllerFactory(applicationContext::getBean);
             }

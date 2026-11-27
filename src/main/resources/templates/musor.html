@@ -11,29 +11,17 @@
 
     <div class="tartalom">
         <div class="reklam"> <span>Hirdetés - Akciós Menü a Büfében!</span> </div>
-
-        <!-- Végigmegyünk a filmek és vetítések map-en a meglévő .filmblokk osztállyal -->
         <div th:each="entry : ${musorLista}" class="filmblokk">
-
-            <!-- Plakát kép vagy alap doboz a meglévő .filmkep osztállyal -->
             <div class="filmkep">
                 <img th:if="${entry.key.plakat != null}" th:src="@{${entry.key.plakat}}" alt="Plakát" style="width: 100%; height: 100%; object-fit: cover;" />
                 <span th:if="${entry.key.plakat == null}">Film</span>
             </div>
-
-            <!-- Szöveges adatok és gombok a meglévő .info osztállyal -->
             <div class="info">
-                <!-- Film címe (autómatikusan veszi a .info h2 stílust) -->
                 <h2 th:text="${entry.key.cim}">Film Címe</h2>
-
-                <!-- Műfaj a meglévő .mufaj osztállyal -->
                 <p class="mufaj" th:text="${entry.key.mufaj}">Műfaj</p>
-
-                <!-- Időpont gombok a meglévő .vetido osztállyal -->
                 <div class="vetido">
                     <th:block th:each="vetites : ${entry.value}">
                         <form th:action="@{/jegy}" method="post">
-                            <!-- Ha a vetités ID-ra hivatkozol, figyelj az entitás mezőnevére! -->
                             <input type="hidden" name="vetitesId" th:value="${vetites.id}"/>
 
                             <button type="submit" th:text="${#temporals.format(vetites.kezdes_idopont, 'HH:mm')}">10:00</button>

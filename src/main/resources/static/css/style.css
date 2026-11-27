@@ -32,6 +32,7 @@ body {
     height: 130px;
     width: 130px;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .title {
@@ -40,6 +41,7 @@ body {
     font-weight: normal;
     margin-left: 20px;
     color: mintcream;
+    cursor: pointer;
 }
 
 .title, .login_h2, .info .mufaj, .leiras, h4 {
@@ -103,14 +105,13 @@ body {
     padding: 8px;
 }
 
-/* --- FRISSÍTVE: Nagyobb és átláthatóbb filmblokk --- */
 .filmblokk {
-    width: 950px;          /* Növelhetjük a szélességet (a régi 800px helyett) */
+    width: 950px;
     max-width: 100%;
-    min-height: 280px;     /* Növeljük a minimális magasságot is, hogy elférjen benne a nagyobb kép */
-    padding: 20px;         /* Több belső hely a széleken */
+    min-height: 280px;
+    padding: 20px;
     flex-direction: row;
-    gap: 25px;             /* Nagyobb távolság a kép és a szöveg között */
+    gap: 25px;
     align-items: flex-start;
     margin-bottom: 15px;
 }
@@ -151,8 +152,13 @@ body {
     align-items: center;
     background-color: mintcream;
 }
+.teremkep img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-/* --- FRISSÍTVE: Nagyobb filmkép / plakát doboz --- */
 .filmkep {
     width: 160px;
     height: 230px;
@@ -163,13 +169,13 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    overflow: hidden; /* Biztosítja, hogy ami kilógna a 140x200-ból, az ne látszódjon */
+    overflow: hidden;
 }
 
 .filmkep img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Arányosan kitölti a dobozt anélkül, hogy torzulna */
+    object-fit: cover;
 }
 
 .teremkep {
@@ -371,7 +377,6 @@ form button[type="submit"] {
 input {
     background-color: mintcream;
 }
-
 
 /*jegyvasarlas stilus*/
 .ket_oszlop {

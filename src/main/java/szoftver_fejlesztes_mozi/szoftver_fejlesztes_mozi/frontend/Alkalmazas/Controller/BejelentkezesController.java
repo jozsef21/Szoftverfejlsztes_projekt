@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class BejelentkezesController {
 
-    // temp
     private static final String FELHASZNALO = "manager";
     private static final String JELSZO = "jelszo";
 

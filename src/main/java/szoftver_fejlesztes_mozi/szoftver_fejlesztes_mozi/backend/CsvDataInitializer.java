@@ -20,7 +20,6 @@ public class CsvDataInitializer {
     @Bean
     CommandLineRunner loadAllCsvData(DolgozokRepository dolgRepo,FelhasznalokRepository felhRepo,KedvezmenyekRepository kedvRepo,FilmekRepository filmRepo, TermekRepository teremRepo, VetitesekRepository vetitesRepo) {
         return args -> {
-            // 1. DOLGOZOK BETÖLTÉSE
             if (dolgRepo.count() == 0) {
                 List<Dolgozok> dolgozo = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -44,7 +43,6 @@ public class CsvDataInitializer {
                 }
             }
 
-            // 2. FELHASZNÁLOK BETÖLTÉSE
             if (felhRepo.count() == 0) {
                 List<Felhasznalok> felhasznalo = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -68,7 +66,6 @@ public class CsvDataInitializer {
                     System.out.println("Hiba Felhasználok olvasásakor: " + e.getMessage());
                 }
             }
-            // 3. KEDVEZMÉNYEK BETÖLTÉSE
             if (kedvRepo.count() == 0) {
                 List<Kedvezmenyek> kedvezmeny = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -91,11 +88,7 @@ public class CsvDataInitializer {
                     System.out.println("Hiba Kedvezmények olvasásakor: " + e.getMessage());
                 }
             }
-
-            // Csak akkor töltjük be, ha még teljesen üres a vetítések tábla
             if (vetitesRepo.count() == 0) {
-
-                // 1. FILMEK BETÖLTÉSE
                 if (filmRepo.count() == 0) {
                     List<Filmek> filmek = new ArrayList<>();
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -121,8 +114,6 @@ public class CsvDataInitializer {
                         System.out.println("Hiba filmek olvasásakor: " + e.getMessage());
                     }
                 }
-
-                // 2. TERMEK BETÖLTÉSE
                 if (teremRepo.count() == 0) {
                     List<Termek> termek = new ArrayList<>();
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -146,8 +137,6 @@ public class CsvDataInitializer {
                         System.out.println("Hiba termek olvasásakor: " + e.getMessage());
                     }
                 }
-
-                // 3. VETÍTÉSEK BETÖLTÉSE
                 List<Vetitesek> vetitesek = new ArrayList<>();
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(
                         new ClassPathResource("CSV/Vetitesek.csv").getInputStream(), StandardCharsets.UTF_8))) {
@@ -159,16 +148,14 @@ public class CsvDataInitializer {
                         if (p.length >= 4) {
                             String filmCim = p[0].trim();
                             Integer teremId = Integer.parseInt(p[1].trim());
-                            LocalDateTime kezdes = LocalDateTime.parse(p[2].trim()); // Pl: 2026-06-01T18:30
+                            LocalDateTime kezdes = LocalDateTime.parse(p[2].trim());
                             Integer alapar = Integer.parseInt(p[3].trim());
 
-                            // Megkeressük az adatbázisból a hozzá tartozó objektumokat
                             Filmek film = filmRepo.findById(filmCim).orElse(null);
                             Termek terem = teremRepo.findById(teremId).orElse(null);
 
                             if (film != null && terem != null) {
                                 Vetitesek v = new Vetitesek();
-                                // Feltételezve, hogy a Vetitesek entitásban vannak setBetyagok (vagy konstruktor)
                                 v.setFilmek_id(film);
                                 v.setTerem_id(terem);
                                 v.setKezdes_idopont(kezdes);

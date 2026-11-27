@@ -80,23 +80,16 @@ public class VetitesekController {
         Optional<ButtonType> eredmeny = dialog.showAndWait();
         if (eredmeny.isPresent() && eredmeny.get() == ButtonType.OK
                 && !film.getText().trim().isEmpty() && !terem.getText().trim().isEmpty() && !idopont.getText().trim().isEmpty()) {
-
-            // Adatok lekérése a kapcsolódó entitásokhoz
             Filmek filmEntity = filmekRepository.findById(film.getText().trim()).orElse(null);
             Integer teremID = Integer.parseInt(terem.getText().trim());
             Termek teremEntity = termekRepository.findById(teremID).orElse(null);
-
-            // 1. Létrehozzuk az új entitást Builder mintával
             Vetitesek uj = Vetitesek.builder()
                     .filmek_id(filmEntity)
                     .terem_id(teremEntity)
                     .Kezdes_idopont(LocalDateTime.parse(idopont.getText().trim()))
                     .alapar(3000)
                     .build();
-            // 2. Elmentjük az adatbázisba a Repository-n keresztül
             vetitesekRepository.save(uj);
-
-            // 3. Frissítjük a táblázatot az adatbázis tartalmával
             adatokBetolteseAdatbazisbol();
         }
     }
@@ -108,10 +101,7 @@ public class VetitesekController {
             new Alert(Alert.AlertType.WARNING, "Válassz ki egy vetítést a listából!").showAndWait();
             return;
         }
-        // Törlés az adatbázisból a Repository segítségével
         vetitesekRepository.delete(kivalasztott);
-
-        // Táblázat frissítése
         adatokBetolteseAdatbazisbol();
     }
 

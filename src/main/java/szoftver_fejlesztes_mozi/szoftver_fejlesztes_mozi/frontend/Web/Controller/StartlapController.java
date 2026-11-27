@@ -24,7 +24,7 @@ public class StartlapController {
 
         Collections.shuffle(filmek);
 
-        List<Filmek> randomFilmek = filmek.stream().limit(10).collect(Collectors.toList());
+        List<Filmek> randomFilmek = filmek.stream().limit(8).collect(Collectors.toList());
 
         model.addAttribute("randomFilmek",randomFilmek);
         return "startlap";

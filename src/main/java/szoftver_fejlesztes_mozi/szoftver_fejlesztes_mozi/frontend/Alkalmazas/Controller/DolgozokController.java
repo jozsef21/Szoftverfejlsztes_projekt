@@ -24,20 +24,15 @@ public class DolgozokController {
 
     private ObservableList<Dolgozok> dolgozokLista = FXCollections.observableArrayList();
 
-    // Konstruktor alapú injekció közvetlenül a Springtől
     public DolgozokController(DolgozokRepository dolgozokRepository) {
         this.dolgozokRepository = dolgozokRepository;
     }
 
     @FXML
     private void initialize() {
-        // Oszlopok összekötése a Dolgozok entitás mezőivel
         nevOszlop.setCellValueFactory(new PropertyValueFactory<>("nev"));
         beosztasOszlop.setCellValueFactory(new PropertyValueFactory<>("munkakor"));
-
         tabla.setItems(dolgozokLista);
-
-        // Adatok lekérése az adatbázisból és betöltése a táblázatba
         adatokBetolteseAdatbazisbol();
     }
 
@@ -67,16 +62,11 @@ public class DolgozokController {
         Optional<ButtonType> eredmeny = dialog.showAndWait();
         if (eredmeny.isPresent() && eredmeny.get() == ButtonType.OK
                 && !nev.getText().trim().isEmpty() && !beosztas.getText().trim().isEmpty()) {
-            // 1. Létrehozzuk az új entitást
             Dolgozok uj = Dolgozok.builder()
                     .nev(nev.getText().trim())
                     .munkakor(beosztas.getText().trim())
                     .build();
-
-            // 2. Elmentjük az adatbázisba a Repository-n keresztül
             dolgozokRepository.save(uj);
-
-            // 3. Frissítjük a táblázatot az adatbázis tartalmával
             adatokBetolteseAdatbazisbol();
         }
     }
@@ -88,10 +78,7 @@ public class DolgozokController {
             new Alert(Alert.AlertType.WARNING, "Válassz ki egy dolgozót a listából!").showAndWait();
             return;
         }
-        // Törlés az adatbázisból a Repository segítségével
         dolgozokRepository.delete(kivalasztott);
-
-        // Táblázat frissítése
         adatokBetolteseAdatbazisbol();
     }
 

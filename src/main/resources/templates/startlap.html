@@ -23,7 +23,6 @@
         <div class="ajanlott_kontener">
             <h3>Ajánlott filmjeink</h3>
             <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-
                 <div th:each="film : ${randomFilmek}" class="filmkep">
                     <img th:src="${film.plakat}" th:alt="${film.cim}" />
                 </div>
